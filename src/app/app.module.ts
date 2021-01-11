@@ -3,20 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { GraficoComponent } from './grafico/grafico.component';
-import { InicioComponent } from './inicio/inicio.component';
-import { VotarComponent } from './votar/votar.component';
-import { RegistroComponent } from './registro/registro.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { VotarComponent } from './pages/votar/votar.component';
+import { RegistroComponent } from './pages/registro/registro.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { GraficoComponent } from './components/grafico/grafico.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    GraficoComponent,
     InicioComponent,
     VotarComponent,
-    RegistroComponent
+    RegistroComponent,
+    NavbarComponent,
+    GraficoComponent
+  ],
+  exports: [
+    NavbarComponent,
+    GraficoComponent,
   ],
   imports: [
     BrowserModule,
