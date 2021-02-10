@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
+import { CovidService } from './services/covid.service';
+
 import { AppComponent } from './app.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { VotarComponent } from './pages/votar/votar.component';
-import { RegistroComponent } from './pages/registro/registro.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GraficoComponent } from './components/grafico/grafico.component';
 
@@ -14,19 +16,19 @@ import { GraficoComponent } from './components/grafico/grafico.component';
     AppComponent,
     InicioComponent,
     VotarComponent,
-    RegistroComponent,
     NavbarComponent,
     GraficoComponent
   ],
   exports: [
     NavbarComponent,
-    GraficoComponent,
+    GraficoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CovidService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
