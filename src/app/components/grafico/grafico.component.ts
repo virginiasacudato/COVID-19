@@ -14,7 +14,38 @@ export class GraficoComponent {
   constructor( private covid: CovidService){}
 
   ngOnInit(){
-    this.covid.covidApi().subscribe(res => console.log(res));
+    this.covid.covidApi().subscribe(res => {
+      /*const result = res.location.timelines;
+      const {deaths, confirmed, recovered} = result;*/
+      const muertes = res.location.timelines.deaths.timeline;
+      console.log(muertes);
+
+      this.chart = new Chart ('canvas', {
+        type: 'bar',
+        data: {
+          datasets : {
+            labels: Object.keys(muertes),
+            data: muertes,
+            backgroundColor: 'red',
+            fill: false
+          },
+        },
+        options:{
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes:[{
+              display: true
+            }],
+            yAxes:[{
+              display: true
+            }]
+          }
+        }
+      })
+      });
+
   }
 }
 
