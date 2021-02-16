@@ -1,1 +1,11 @@
-<p>votar works!</p>
+<div>
+    <h3>Y vos te vacunarías? Vota</h3>
+    <p>Teniendo en cuenta toda la información de los medios. Vota por la vacuna que consideres de mayor eficacia y con la que te gustaría ser vacunado.</p>
+    <ul>
+      <li *ngFor="let vaccine of vaccineData">
+        <img [src]="vaccine.image" [alt]="vaccine.name" (click)="castVote(vaccine.shortName)" [ngClass]="getVoteClasses(vaccine.shortName)">
+        <h4>{{vaccine.name}}</h4>
+        <!--<p>{{vaccine.effectiveness}} %</p>
+      </li>
+    </ul>
+  </div>

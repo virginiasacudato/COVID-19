@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
+
 import { CovidService } from './services/covid.service';
 
 import { AppComponent } from './app.component';
