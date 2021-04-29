@@ -5,9 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-
-
 import { CovidService } from './services/covid.service';
+import {PusherService} from './services/pusher.service';
 
 import { AppComponent } from './app.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
@@ -36,7 +35,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NgxChartsModule,
     BrowserAnimationsModule
   ],
-  providers: [CovidService],
+  providers: [CovidService, PusherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

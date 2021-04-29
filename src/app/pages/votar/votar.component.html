@@ -1,11 +1,23 @@
 <div>
-    <h3>Y vos te vacunarías? Vota</h3>
-    <p>Teniendo en cuenta toda la información de los medios. Vota por la vacuna que consideres de mayor eficacia y con la que te gustaría ser vacunado.</p>
+  <h1>Vota 🤔</h1>
     <ul>
       <li *ngFor="let vaccine of vaccineData">
-        <img [src]="vaccine.image" [alt]="vaccine.name" (click)="castVote(vaccine.shortName)" [ngClass]="getVoteClasses(vaccine.shortName)">
+        <img [src]="vaccine.image" [alt]="vaccine.name" (click)="castVote(vaccine.shortName)" [ngClass]="getVoteClasses(vaccine.shortName)" ng-model="all">
         <h4>{{vaccine.name}}</h4>
-        <!--<p>{{vaccine.effectiveness}} %</p>
       </li>
     </ul>
   </div>
+  
+   <div *ngIf="voted" ng-disabled="all">
+    <h2>Como votaron otros</h2>
+    <ul>
+      <li *ngFor="let vaccine of vaccineData">
+        <h3>{{vaccine.name}}</h3>
+      </li>
+    </ul>
+    <ul>           
+  <li *ngFor = "let voteCountData of votesCountData">
+    <h3>{{voteCountData}}</h3>
+  </li>
+</ul>
+</div>

@@ -1,9 +1,11 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+// NG SERVE
 export const environment = {
-  production: false
+  production: false,
+  key_pusher: '3233c24a975ae467e1d0',
+  apiUrl: 'https://coronavirus-tracker-api.herokuapp.com/v2/locations/6'
 };
 
 /*

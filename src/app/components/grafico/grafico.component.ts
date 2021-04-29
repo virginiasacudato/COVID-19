@@ -10,7 +10,7 @@ import { reduce } from 'rxjs/operators';
   styleUrls: ['./grafico.component.css']
 })
 export class GraficoComponent {
- chart = [];
+chart = [];
 
   constructor( private covid: CovidService){}
 
@@ -23,7 +23,8 @@ export class GraficoComponent {
       const confirmados = res.location.timelines.confirmed.timeline;
       console.log(muertes);
 
-     this.chart = new Chart ('canvas', {
+  // Configuración de grafico
+  this.chart = new Chart ('canvas', {
         type: 'line',
         data: {
           labels: Object.keys(muertes),
@@ -68,6 +69,4 @@ export class GraficoComponent {
 
   }
 }
-
-
 

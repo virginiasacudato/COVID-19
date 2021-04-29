@@ -50,3 +50,8 @@ div ul li p {
   font-weight: bold;
   margin: 4px 0;
 }
+.chart-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
